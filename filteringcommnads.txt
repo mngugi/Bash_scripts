@@ -1,0 +1,21 @@
+grep Football filter_file.txt
+
+grep -c  Baseball filter_file.txt
+
+grep -e Basketball -e Football filter_file.txt
+
+grep -c -e Basketball -e Football filter_file.txt
+====================================================
+
+find . -name "*.sh"
+
+find . -name "*.csv"
+
+find . -perm /+x ! -name '.*' -type f
+
+find . -perm /+x -not -path '*/\.*' -type f
+
+
+
+
+
