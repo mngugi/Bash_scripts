@@ -216,7 +216,7 @@ The second command also attempts to list the contents of the `/var/kudus` direct
 The third command also attempts to list the contents of the `/var/kudus` directory, but this time the error message is thrown away and not printed to the terminal or written to a file. This is done using the `3 >/dev/null` redirection operator, which redirects both the standard output (`stdout)` and standard error to the `/dev/null` device, which discards any input written to it.
 
 ---
-filtering.sh
+### filtering.sh
 Code:
 ```bash
 #!/usr/bin/env bash
