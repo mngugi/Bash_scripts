@@ -217,7 +217,7 @@ The third command also attempts to list the contents of the `/var/kudus` directo
 
 ---
 ### filtering.sh
-Code:
+**Code:**
 ```bash
 #!/usr/bin/env bash
 
