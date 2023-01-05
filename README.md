@@ -311,8 +311,8 @@ The script then prints a message and the value of `FPATH` to the terminal using 
 Note that `FPATH` is not being expanded to the absolute path of `FILENAME`. Instead, it is being assigned the string 'readlink -f $FILENAME' as its value. To expand `FPATH` to the absolute path of `FILENAME`, you should use the following assignment: ``FPATH=$(readlink -f "$FILENAME").`` The `$()` operator is used to run the command inside the parentheses and capture its output.
 
 ---
-standard_out.sh
-Code:
+### standard_out.sh
+**Code:**
 ```bash
 #!/bin/bash
 
