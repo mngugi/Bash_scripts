@@ -216,8 +216,8 @@ The second command also attempts to list the contents of the `/var/kudus` direct
 The third command also attempts to list the contents of the `/var/kudus` directory, but this time the error message is thrown away and not printed to the terminal or written to a file. This is done using the `3 >/dev/null` redirection operator, which redirects both the standard output (`stdout)` and standard error to the `/dev/null` device, which discards any input written to it.
 
 ---
-### filtering.sh
-**Code:**
+filtering.sh
+Code:
 ```bash
 #!/usr/bin/env bash
 
@@ -311,8 +311,8 @@ The script then prints a message and the value of `FPATH` to the terminal using 
 Note that `FPATH` is not being expanded to the absolute path of `FILENAME`. Instead, it is being assigned the string 'readlink -f $FILENAME' as its value. To expand `FPATH` to the absolute path of `FILENAME`, you should use the following assignment: ``FPATH=$(readlink -f "$FILENAME").`` The `$()` operator is used to run the command inside the parentheses and capture its output.
 
 ---
-### standard_out.sh
-**Code:**
+standard_out.sh
+Code:
 ```bash
 #!/bin/bash
 
@@ -347,3 +347,76 @@ The script enters an infinite loop using the while true construct. The loop will
 Inside the loop, the script uses the echo command to print a message to the terminal and then uses the sleep command to pause the script for `5` seconds. The sleep command takes a single argument specifying the number of seconds to pause.
 
 The loop will continue to execute, printing the message and sleeping for` 5` seconds on each iteration, until it is interrupted. To interrupt the loop, you can use the `CTRL-C `keyboard combination. This will cause the script to terminate.
+
+---
+
+### Check.sh
+**Code:**
+
+```Bash
+#!/bin/bash
+# Simple script to list version numbers of critical development tools
+export LC_ALL=C
+bash --version | head -n1 | cut -d" " -f2-4
+MYSH=$(readlink -f /bin/sh)
+echo "/bin/sh -> $MYSH"
+echo $MYSH | grep -q bash || echo "ERROR: /bin/sh does not point to bash"
+unset MYSH
+
+echo -n "Binutils: "; ld --version | head -n1 | cut -d" " -f3-
+bison --version | head -n1
+
+if [ -h /usr/bin/yacc ]; then
+  echo "/usr/bin/yacc -> `readlink -f /usr/bin/yacc`";
+elif [ -x /usr/bin/yacc ]; then
+  echo yacc is `/usr/bin/yacc --version | head -n1`
+else
+  echo "yacc not found"
+fi
+
+echo -n "Coreutils: "; chown --version | head -n1 | cut -d")" -f2
+diff --version | head -n1
+find --version | head -n1
+gawk --version | head -n1
+
+if [ -h /usr/bin/awk ]; then
+  echo "/usr/bin/awk -> `readlink -f /usr/bin/awk`";
+elif [ -x /usr/bin/awk ]; then
+  echo awk is `/usr/bin/awk --version | head -n1`
+else
+  echo "awk not found"
+fi
+
+gcc --version | head -n1
+g++ --version | head -n1
+grep --version | head -n1
+gzip --version | head -n1
+cat /proc/version
+m4 --version | head -n1
+make --version | head -n1
+patch --version | head -n1
+echo Perl `perl -V:version`
+python3 --version
+sed --version | head -n1
+tar --version | head -n1
+makeinfo --version | head -n1  # texinfo version
+xz --version | head -n1
+
+echo 'int main(){}' > dummy.c && g++ -o dummy dummy.c
+if [ -x dummy ]
+  then echo "g++ compilation OK";
+  else echo "g++ compilation failed"; fi
+rm -f dummy.c dummy
+
+```
+This script is used to list the version numbers of various development tools that are critical for building software.
+
+The script begins by setting the LC_ALL environment variable to C and then printing the version number of bash, which is the shell being used to interpret the script. It then determines the path of the /bin/sh symbolic link and prints it. If the link does not point to bash, it prints an error message.
+
+The script then prints the version number of binutils by running the ld command with the --version option and parsing the output. It also prints the version number of bison by running the bison command with the --version option.
+
+Next, the script checks for the presence of yacc (a parser generator tool) on the system. If it is present, it prints the path of the /usr/bin/yacc symbolic link or the version number of yacc, depending on whether it is a symbolic link or an executable file. If yacc is not found, it prints a message to that effect.
+
+The script then goes on to print the version numbers of various other tools, such as coreutils, gawk, gcc, g++, grep, gzip, m4, make, patch, perl, python3, sed, tar, makeinfo, and xz. It also checks if the g++ compiler can compile a simple "Hello, World!" program by creating a file called dummy.c containing a C++ source code, compiling it with g++, and checking if the resulting executable file can be run. Finally, it cleans up by removing the dummy.c and dummy files.
+
+---
