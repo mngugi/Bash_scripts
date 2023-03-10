@@ -420,3 +420,76 @@ Next, the script checks for the presence of yacc (a parser generator tool) on th
 The script then goes on to print the version numbers of various other tools, such as coreutils, gawk, gcc, g++, grep, gzip, m4, make, patch, perl, python3, sed, tar, makeinfo, and xz. It also checks if the g++ compiler can compile a simple "Hello, World!" program by creating a file called dummy.c containing a C++ source code, compiling it with g++, and checking if the resulting executable file can be run. Finally, it cleans up by removing the dummy.c and dummy files.
 
 ---
+
+### ll.sh
+
+`#!/bin/bash`
+`ls -l`
+
+This is a simple Bash script that lists the files and directories in the current working directory and displays detailed information about them using the ls -l command. The -l option specifies the long format, which displays the file or directory name, permissions, owner, group, size, modification time, and other information.
+
+When you execute this script, it will display the output of the ls -l command in the terminal. You can save this script as a file with a .sh extension, give it executable permissions using chmod +x <filename>, and then run it using ./<filename>.
+
+Note that the output of ls -l can be quite long, especially if there are many files and directories in the current working directory, so you may want to use other options to filter or sort the output, such as ls -lh to display the file sizes in a more human-readable format, or ls -l | grep <pattern> to search for specific files or directories.
+
+---
+
+### tcpDump.sh
+
+`#!/bin/bash`
+
+`sudo tcpdump -u`
+
+This is a simple Bash script that uses the tcpdump command to capture network traffic on a system. The -u option specifies that the packets should be printed in "UDP" format.
+
+When you execute this script with sudo, it will start capturing network traffic on the system and print the resulting packets in the terminal. Note that using sudo is necessary in order to have sufficient privileges to capture network traffic.
+
+This script could be useful for troubleshooting network issues, analyzing network traffic for security purposes, or simply monitoring network activity. However, it is important to use this tool responsibly and with appropriate permissions, as capturing network traffic can potentially expose sensitive information.
+
+You may want to use additional options with tcpdump to filter the captured packets by source or destination IP address, port number, protocol, or other criteria. For example, you could use sudo tcpdump -u -i eth0 host <ip_address> to capture packets only from a specific IP address, or sudo tcpdump -u -i eth0 port <port_number> to capture packets only on a specific port.
+
+---
+### telnet.sh
+**Code**
+
+```Bash
+#!/bin/bash
+
+# Prompt the user for input
+echo "Enter connection IP:"
+read IP
+
+# Send an HTTP GET request to the specified IP address using telnet
+(
+echo "GET / HTTP/1.1"
+echo "Host: $IP"
+echo "Connection: close"
+echo ""
+sleep 1
+) | telnet $IP 80
+
+```
+This is a Bash script that sends an HTTP GET request to a specified IP address using the telnet command. The script first prompts the user to enter the connection IP, and then sends an HTTP GET request to port 80 of that IP address.
+
+The HTTP GET request is constructed using the echo command, which writes each line of the request to the standard output. The request includes the HTTP version, the host header, and the connection header. The sleep command is used to insert a one second delay before sending the request, to ensure that the telnet connection is established before the request is sent.
+
+The request is piped to the telnet command, which establishes a connection to the specified IP address and port number (in this case, port 80). The telnet command sends the request to the remote server and displays the response in the terminal.
+
+This script can be useful for testing HTTP connectivity to a remote server, checking for server responses and troubleshooting any connection issues. However, it should be noted that the telnet command is not a secure method of connecting to a remote server, as it sends data in plaintext. It is recommended to use a secure connection method, such as SSH or HTTPS, whenever possible.
+
+---
+
+### top.sh
+
+`#!/bin/bash`
+`top`
+
+This is a Bash script that runs the top command, which displays real-time information about the processes running on a Unix or Linux system.
+
+When you execute this script, it will display a continuously updating list of processes in the terminal, sorted by CPU usage by default. The top command also provides information about the memory usage, process IDs, user accounts, and other details about each process.
+
+This script can be useful for monitoring system performance and identifying any processes that may be using excessive CPU or memory resources. However, the top command can consume significant system resources, especially if there are many processes running on the system, so it should be used with caution and only for short periods of time.
+
+You may want to use additional options with top to customize the output, such as top -u <username> to display only the processes running under a specific user account, or top -p <pid> to display information about a specific process ID. You can also use the q key to quit the top command and return to the terminal prompt.
+
+
