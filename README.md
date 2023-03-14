@@ -492,4 +492,22 @@ This script can be useful for monitoring system performance and identifying any 
 
 You may want to use additional options with top to customize the output, such as top -u <username> to display only the processes running under a specific user account, or top -p <pid> to display information about a specific process ID. You can also use the q key to quit the top command and return to the terminal prompt.
 
+---
+### traceRoute.sh
+**Code**
 
+```Bash
+#!/bin/bash
+
+# Prompt user for IP address
+read -p "Enter IP address to trace: " ip_address
+
+# Perform traceroute
+traceroute $ip_address
+
+```
+This is a simple bash script that prompts the user to enter an IP address and then performs a traceroute to that address. The traceroute command is a network diagnostic tool that shows the path taken by packets from the source to the destination.
+
+To use this script, you would save the code into a file with a .sh extension, such as trace.sh, and then make it executable using the command "chmod +x trace.sh". You can then run the script by typing "./trace.sh" in the terminal.
+
+Note that the script assumes that the traceroute command is installed on the system. If it is not, you will need to install it before using the script. The method for installing traceroute will depend on your operating system and distribution.
