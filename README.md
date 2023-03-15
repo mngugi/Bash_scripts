@@ -511,3 +511,28 @@ This is a simple bash script that prompts the user to enter an IP address and th
 To use this script, you would save the code into a file with a .sh extension, such as trace.sh, and then make it executable using the command "chmod +x trace.sh". You can then run the script by typing "./trace.sh" in the terminal.
 
 Note that the script assumes that the traceroute command is installed on the system. If it is not, you will need to install it before using the script. The method for installing traceroute will depend on your operating system and distribution.
+
+---
+
+### curl.sh
+**Code**
+
+```Bash
+#!/bin/bash
+
+# Set the URL to request
+url="https://example.com"
+
+# Make the request using curl
+response=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+
+# Print the response code
+echo "Response code: $response"
+
+```
+Assuming you want to use a Bash script to perform an HTTP GET request, you can use the curl command, which is a popular command-line tool for transferring data using various protocols, including HTTP.
+The first line specifies that this is a Bash script.
+We set the URL we want to request to the variable url.
+We use the curl command to make the request. The -s option suppresses any output except for the response code, which is sent to standard output. The -o /dev/null option redirects the response body to /dev/null so it doesn't clutter the output. The -w option allows us to specify a custom output format, which in this case is just the response code.
+We capture the response code in the response variable.
+We print the response code using echo. modify this script to suit your needs. For example, you could use the -H option to specify custom headers, or the -X option to specify a different HTTP method (e.g., POST instead of GET).
