@@ -536,3 +536,42 @@ We set the URL we want to request to the variable url.
 We use the curl command to make the request. The -s option suppresses any output except for the response code, which is sent to standard output. The -o /dev/null option redirects the response body to /dev/null so it doesn't clutter the output. The -w option allows us to specify a custom output format, which in this case is just the response code.
 We capture the response code in the response variable.
 We print the response code using echo. modify this script to suit your needs. For example, you could use the -H option to specify custom headers, or the -X option to specify a different HTTP method (e.g., POST instead of GET).
+
+---
+
+### telnetGET.sh
+**Code**
+
+```Bash
+#!/bin/bash
+
+# Get URL from user input
+read -p "Enter URL: " url
+
+# Extract host and port from URL
+host=$(echo "$url" | awk -F/ '{print $3}')
+port=$(echo "$url" | awk -F/ '{print $1}' | awk -F: '{print $2}')
+
+# Connect to host using telnet
+exec 3<>/dev/tcp/"$host"/"$port"
+echo -e "GET / HTTP/1.1\r\nHost: $host\r\n\r\n" >&3
+
+# Read response headers from telnet output
+while read -r line; do
+  echo "$line"
+done <&3
+
+# Close telnet connection
+exec 3<&-
+exec 3>&-
+
+```
+an example Bash script that takes a URL as input, uses telnet to connect to the server, and then sends a GET request to retrieve the HTTP headers.
+We use read to get the URL from the user input.
+We extract the host and port from the URL using awk.
+We use exec to open a bidirectional connection to the host using telnet, and send a GET request with the appropriate HTTP headers.
+We use a while loop to read the response headers from the telnet output line by line and print them to the console.
+We use exec again to close the telnet connection.
+
+Note that this script assumes that the URL is valid and contains both the protocol (e.g., http:// or https://) and the path to the resource (e.g., /index.html). If the URL is incomplete or malformed, the script may not work as expected.
+
