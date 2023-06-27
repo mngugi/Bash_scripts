@@ -575,3 +575,22 @@ We use exec again to close the telnet connection.
 
 Note that this script assumes that the URL is valid and contains both the protocol (e.g., http:// or https://) and the path to the resource (e.g., /index.html). If the URL is incomplete or malformed, the script may not work as expected.
 
+---
+### updates.sh
+**Code:**
+
+```Bash
+#!/bin/bash
+
+sudo dnf update
+sudo dnf upgrade
+
+```
+
+Bash script that uses the sudo command to run the dnf update and dnf upgrade commands. These commands are specific to Linux distributions that use the DNF package manager, such as Fedora.
+
+The purpose of the script is to update and upgrade the installed packages on the system. The dnf update command updates the packages to their latest versions, while the dnf upgrade command upgrades the installed packages to newer versions if available.
+
+Running these commands with sudo gives them elevated privileges, allowing them to make system-level changes. It's important to exercise caution when using sudo as it grants significant control over the system, and unnecessary or incorrect commands can cause unintended consequences.
+
+
