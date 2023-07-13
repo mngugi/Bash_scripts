@@ -593,4 +593,22 @@ The purpose of the script is to update and upgrade the installed packages on the
 
 Running these commands with sudo gives them elevated privileges, allowing them to make system-level changes. It's important to exercise caution when using sudo as it grants significant control over the system, and unnecessary or incorrect commands can cause unintended consequences.
 
+---
+
+### nginxFirewall.sh
+```C
+#! /bin/bash
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+
+```
+The script that uses the firewall-cmd command to add the HTTP and HTTPS services to the firewall configuration permanently. The firewall-cmd command is typically used on Linux systems that utilize firewalld as the firewall management tool.
+
+When executed with root privileges (using sudo), this script adds the HTTP and HTTPS services to the firewall's list of allowed services, ensuring that incoming traffic on ports 80 (HTTP) and 443 (HTTPS) is permitted.
+
+The --permanent flag makes the changes persistent across firewall reloads or system reboots. After executing these commands, the HTTP and HTTPS services will be allowed by the firewall on the system.
+
+Please note that this script assumes that the firewall-cmd command is available on your system and that you have the necessary permissions to execute it.
+
+---
 
