@@ -1,3 +1,4 @@
+/* Upgrade pip and install pandas and ipython */
 FROM python:3.10.1-bullseye
 
 RUN pip install --upgrade pip\
