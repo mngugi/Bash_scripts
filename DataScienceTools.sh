@@ -59,4 +59,5 @@ pip install xgboost
 
 # List all installed packages and their versions
 pip list
-
+# Enable Jupyter notebook extensions
+jupyter nbextension enable --py widgetsnbextension
