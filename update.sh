@@ -8,8 +8,7 @@ sudo dnf --refresh update
 sudo dnf install dnf-plugin-system-upgrade
 sudo dnf install rpmconf
 sudo rpmconf -a
-sudo mount | grep "/boot "
-/dev/sda4 on /boot type ext4 (rw,relatime,seclabel)
+
 sudo grub2-install /dev/sda
 sudo dnf system-upgrade download --releasever=39
 
