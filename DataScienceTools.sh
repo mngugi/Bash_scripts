@@ -57,6 +57,42 @@ pip install tensorflow
 # Install XGBoost for gradient boosting
 pip install xgboost
 
+# Multiple pythons
+sudo dnf install python3.9  # to get CPython 3.9
+sudo dnf install python3.8  # to get CPython 3.8
+sudo dnf install python3.7  # to get CPython 3.7
+sudo dnf install python3.6  # to get CPython 3.6
+sudo dnf install python2.7  # to get CPython 2.7
+sudo dnf install pypy2 pypy3.9 python3.10  # to get more at once
+sudo dnf install tox
+
+#install SymPy by running:
+
+sudo dnf install python3-sympy
+
+# install jupyter notebook
+sudo dnf install notebook
+
+# install ipython
+sudo dnf install python3-ipython
+
+
+# get all on tox
+python -m pip install pipx-in-pipx --user
+pipx install tox
+tox --help
+
+# install pip env
+sudo dnf install pipenv
+
+#install sphinx
+sudo dnf install python3-sphinx
+
+# install PyGobject
+sudo dnf install python3-gobject
+
+#install microPython
+sudo dnf install micropython
 # List all installed packages and their versions
 pip list
 # Enable Jupyter notebook extensions
