@@ -62,5 +62,9 @@ sudo dnf distro-sync --allowerasing
 # Set SELinux context on boot
 sudo fixfiles -B onboot
 
+sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql
+
+
 # Reboot the system for the upgrade to take effect
 sudo dnf system-upgrade reboot
+
