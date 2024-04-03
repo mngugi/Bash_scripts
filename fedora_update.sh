@@ -5,4 +5,4 @@ sudo dnf update
 
 # Upgrade installed packages
 sudo dnf upgrade
-
+sudo reboot 
