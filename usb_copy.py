@@ -9,9 +9,9 @@ def copy_to_usb(file_path, usb_drive_path):
         print(f"Error: {e}")
 
 # Path to the file you want to copy
-source_file_path = "/home/x1869/Downloads/update.sh"
+source_file_path = "/vvvv/xxxxxx9/Downloads/"
 
 # Path to the USB drive (e.g., on Windows it might be "D:\\")
-usb_drive_path = "/run/media/x1869/V"
+usb_drive_path = "/run/media/xxxxx/"
 
 copy_to_usb(source_file_path, usb_drive_path)
