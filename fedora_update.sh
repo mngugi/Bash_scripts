@@ -1,7 +1,7 @@
 
 #!/bin/bash
-#Author: Peter Mwangi Ngugi
-#fedora daily updates on terminal
+# Author: Peter Mwangi Ngugi
+# fedora daily updates on terminal
 # Update package lists
 sudo dnf update
 
