@@ -26,7 +26,7 @@ sudo dnf install nmap  #Nmap is a free and open source utility for network disco
 sudo dnf install scap-workbench #A GUI tool that serves as an SCAP scanner and provides tailoring functionality for SCAP content.
 
 # install skipfish
-sudo dnf install skipfish
+sudo dnf install skipfish # Skipfish is an active web application security reconnaissance tool.
 
 # install sqlninja
 sudo dnf install sqlninja
