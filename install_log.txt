@@ -1,2 +1,6 @@
 Starting installation...
 Error installing skipfish
+Error installing metasploit
+Error installing burpsuite
+Error installing openvas
+Error initializing Metasploit database
