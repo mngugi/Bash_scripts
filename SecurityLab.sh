@@ -8,7 +8,7 @@
 sudo dnf install etherape #EtherApe is a graphical network monitor for UNIX modeled after etherman. It #displays network activity graphically.
 
 # install ettercap 
-sudo dnf install ettercap
+sudo dnf install ettercap #Ettercap is a comprehensive suite for man in the middle attacks.
 
 # install wireshark
 sudo dnf install wireshark
