@@ -117,6 +117,9 @@ pip list
 # Enable Jupyter notebook extensions
 jupyter nbextension enable --py widgetsnbextension
 
+# install git
+sudo dnf install git
+
 # updates 
 python -m pip install --update requests
 
