@@ -126,8 +126,11 @@ sudo dnf install gnuplot
 # install GNU Octave 
 sudo dnf -y install scilab
 
-#install R - programming
-sudo dnf -y install rkward.
+# install R - programming
+sudo dnf -y install rkward
+
+# install R development in jupyter
+sudo dnf -y install czmq-devel
 
 # updates 
 python -m pip install --update requests
