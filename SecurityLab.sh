@@ -15,7 +15,6 @@ sudo dnf install ettercap #Ettercap is a comprehensive suite for man in the midd
 sudo dnf install wireshark
 sudo usermod -aG wireshark $USER
 
-
 # install medusa
 sudo dnf install medusa #Medusa is intended to be a speedy, massively parallel, modular, login brute-#forcer.
 
