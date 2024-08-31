@@ -11,6 +11,7 @@ sudo dnf install etherape #EtherApe is a graphical network monitor for UNIX mode
 sudo dnf install ettercap #Ettercap is a comprehensive suite for man in the middle attacks.
 
 # install wireshark
+# Wireshark is a network traffic analyzer for UNIX-ish operating systems.
 sudo dnf install wireshark
 sudo usermod -aG wireshark $USER
 
