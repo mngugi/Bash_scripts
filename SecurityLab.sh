@@ -51,5 +51,14 @@ sudo dnf install nikto
 sudo dnf install metasploit
 
 
+ncrack  # Added for network authentication cracking
+  burpsuite  # Added for advanced web vulnerability scanning
+  hashcat  # Added for GPU-based password cracking
+  lynis  # Added for system auditing
+  tcpdump  # Added for network packet capturing
+  gobuster  # Added for directory and file brute-forcing
+  openvas  # Added for vulnerability scanning
+
+
 
 
