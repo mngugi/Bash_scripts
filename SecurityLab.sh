@@ -39,7 +39,7 @@ sudo dnf install hydra
 # install aircrack-ng
 sudo dnf install aircrack-ng
 
-# install john        
+# install john        #A fast password cracker
 sudo dnf install john 
 
 # install nikto        #A web server scan
