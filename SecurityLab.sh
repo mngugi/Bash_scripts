@@ -20,10 +20,10 @@ sudo usermod -aG wireshark $USER
 sudo dnf install medusa #Medusa is intended to be a speedy, massively parallel, modular, login brute-#forcer.
 
 # install nmap
-sudo dnf install nmap 
+sudo dnf install nmap  #Nmap is a free and open source utility for network discovery and security auditing.
 
 # install scap-workbench
-sudo dnf install scap-workbench
+sudo dnf install scap-workbench #A GUI tool that serves as an SCAP scanner and provides tailoring functionality for SCAP content.
 
 # install skipfish
 sudo dnf install skipfish
