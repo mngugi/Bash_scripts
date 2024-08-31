@@ -53,10 +53,10 @@ sudo dnf install metasploit
 sudo dnf install ncrack  # for network authentication cracking
 
 # install burpsuite
-sudo dnf install  burpsuite  # Added for advanced web vulnerability scanning
+sudo dnf install  burpsuite  # for advanced web vulnerability scanning
 
 # install hashcat
-sudo dnf hashcat  # Added for GPU-based password cracking
+sudo dnf hashcat  # for GPU-based password cracking
 
 # install lynis
 sudo dnf install lynis  # Added for system auditing
