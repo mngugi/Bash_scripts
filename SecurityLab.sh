@@ -17,10 +17,10 @@ sudo usermod -aG wireshark $USER
 
 
 # install medusa
-sudo dnf install medusa
+sudo dnf install medusa #Medusa is intended to be a speedy, massively parallel, modular, login brute-#forcer.
 
 # install nmap
-sudo dnf install nmap
+sudo dnf install nmap 
 
 # install scap-workbench
 sudo dnf install scap-workbench
