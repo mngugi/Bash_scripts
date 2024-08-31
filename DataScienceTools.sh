@@ -3,8 +3,11 @@
 # Use: This program is used for Fedora OS but can be edited to work for 
 # any other operating systems. 
 
-#install pip for python packages installations
+# Activate virtual environment to have all tools working in one location.
+python3 -m venv project_venv
 
+
+#install pip for python packages installations
 sudo dnf install python3-pip
 
 # Install the Gekko optimization library
