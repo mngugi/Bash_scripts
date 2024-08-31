@@ -1,3 +1,4 @@
+/** Author: Peter Mwangi Ngugi **/
 #!/bin/bash
 
 # Update package lists
