@@ -46,7 +46,7 @@ sudo dnf install john
 sudo dnf install nikto
 
 # install metasploit
-sudo dnf install metasploit
+sudo dnf install metasploit #A comprehensive penetration testing framework.
 
 
 # install ncrack 
