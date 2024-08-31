@@ -8,11 +8,16 @@ sudo dnf install etherape
 
 # install ettercap 
 
+sudo dnf install ettercap
+
 # install wireshark
+sudo dnf install wireshark
 
 # install medusa
+sudo dnf install medusa
 
 # install nmap
+sudo dnf install nmap
 
 # install scap-workbench
 
