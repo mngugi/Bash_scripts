@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Author Peter Mwangi Ngugi
-
 # this is bash script programm to install a Security
 # lab on Fedora os
 
@@ -9,7 +8,6 @@
 sudo dnf install etherape
 
 # install ettercap 
-
 sudo dnf install ettercap
 
 # install wireshark
