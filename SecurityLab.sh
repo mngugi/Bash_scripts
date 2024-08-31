@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Author Peter Mwangi Ngugi
+
 # this is bash script programm to install a Security
 # lab on Fedora os
 
@@ -12,6 +14,8 @@ sudo dnf install ettercap
 
 # install wireshark
 sudo dnf install wireshark
+sudo usermod -aG wireshark $USER
+
 
 # install medusa
 sudo dnf install medusa
@@ -30,6 +34,21 @@ sudo dnf install sqlninja
 
 # install yersinia
 sudo dnf install yersinia
+
+# install hydra 
+sudo dnf install hydra 
+
+# install aircrack-ng
+sudo dnf install aircrack-ng
+
+# install john
+sudo dnf install john 
+
+# install nikto
+sudo dnf install nikto
+
+# install metasploit
+sudo dnf install metasploit
 
 
 
