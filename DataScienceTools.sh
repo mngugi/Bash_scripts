@@ -58,7 +58,7 @@ pip install torch
 pip install scikit-learn
 
 # Install SciPy for scientific and technical computing
-pip install scipy
+sudo dnf install python3-scipy
 
 # Install Seaborn for data visualization
 pip install seaborn
