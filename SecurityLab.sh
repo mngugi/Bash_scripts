@@ -60,7 +60,10 @@ sudo dnf hashcat  # Added for GPU-based password cracking
 
 # install lynis
 sudo dnf install lynis  # Added for system auditing
-  tcpdump  # Added for network packet capturing
+
+# install tcpdump
+sudo dnf tcpdump  # Added for network packet capturing
+
   gobuster  # Added for directory and file brute-forcing
   openvas  # Added for vulnerability scanning
 
