@@ -59,7 +59,7 @@ sudo dnf install  burpsuite  # for advanced web vulnerability scanning
 sudo dnf hashcat  # for GPU-based password cracking
 
 # install lynis
-sudo dnf install lynis  # Added for system auditing
+sudo dnf install lynis  #  for system auditing
 
 # install tcpdump
 sudo dnf tcpdump  # Added for network packet capturing
