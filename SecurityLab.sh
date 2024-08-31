@@ -64,8 +64,11 @@ sudo dnf install lynis  # Added for system auditing
 # install tcpdump
 sudo dnf tcpdump  # Added for network packet capturing
 
-  gobuster  # Added for directory and file brute-forcing
-  openvas  # Added for vulnerability scanning
+# install gobuster
+sudo dnf gobuster  # Added for directory and file brute-forcing
+
+# install openvas
+sudo dnf openvas  # Added for vulnerability scanning
 
 
 
