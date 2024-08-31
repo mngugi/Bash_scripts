@@ -1,4 +1,11 @@
 #!/bin/bash
+# Author : Peter Mwangi Ngugi
+# Use: This program is used for Fedora OS but can be edited to work for 
+# any other operating systems. 
+
+#install pip for python packages installations
+
+sudo dnf install python3-pip
 
 # Install the Gekko optimization library
 pip install gekko
