@@ -1,21 +1,20 @@
 #!/bin/bash
 # Author : Peter Mwangi Ngugi
-# Use: This program is used for Fedora OS but can be edited to work for 
-# any other operating systems. 
+# Use: This program is used for Fedora OS but can be edited to work for any other operating systems. 
 
 # Activate virtual environment to have all tools working in one location.
 python3 -m venv project_venv
 
-# run the project requests package 
-python -m pip install requests
-
-# Acivate virtual environment
+# Activate the virtual environment
 source project_venv/bin/activate
 
-# incase you need to use the cowsay :)
-python -m pip install --user cowsay
+# Install requests package
+pip install requests
 
-#install pip for python packages installations
+# Install cowsay (optional)
+pip install cowsay
+
+# Install pip for Python package installations (usually pre-installed)
 sudo dnf install python3-pip
 
 # Install the Gekko optimization library
@@ -23,9 +22,6 @@ pip install gekko
 
 # Install BeautifulSoup4 and lxml for web scraping
 pip install beautifulsoup4 lxml
-
-# Repeated installation of Gekko; you can remove this line as it's redundant
-pip install gekko
 
 # Install Keras for deep learning
 pip install keras
@@ -75,63 +71,53 @@ pip install tensorflow
 # Install XGBoost for gradient boosting
 pip install xgboost
 
-# Multiple pythons
-sudo dnf install python3.12 # to get CPython 3.12
-sudo dnf install python3.9  # to get CPython 3.9
-sudo dnf install python3.8  # to get CPython 3.8
-sudo dnf install python3.7  # to get CPython 3.7
-sudo dnf install python3.6  # to get CPython 3.6
-sudo dnf install python2.7  # to get CPython 2.7
-sudo dnf install pypy2 pypy3.9 python3.10  # to get more at once
+# Install multiple Python versions
+sudo dnf install python3.12 python3.9 python3.8 python3.7 python3.6 python2.7 pypy2 pypy3.9 python3.10
 sudo dnf install tox
 
-#install SymPy by running:
-
+# Install SymPy
 sudo dnf install python3-sympy
 
-# install jupyter notebook
+# Install Jupyter Notebook
 sudo dnf install notebook
 
-# install ipython
+# Install IPython
 sudo dnf install python3-ipython
 
-
-# get all on tox
-python -m pip install pipx-in-pipx --user
+# Install pipx and tox
+pip install pipx
 pipx install tox
 tox --help
 
-# install pip env
+# Install pipenv
 sudo dnf install pipenv
 
-#install sphinx
+# Install Sphinx for documentation
 sudo dnf install python3-sphinx
 
-# install PyGobject
+# Install PyGobject
 sudo dnf install python3-gobject
 
-#install microPython
+# Install MicroPython
 sudo dnf install micropython
+
 # List all installed packages and their versions
 pip list
-# Enable Jupyter notebook extensions
-jupyter nbextension enable --py widgetsnbextension
 
-# install git
+# Install git
 sudo dnf install git
 
-# install gnuplot 
+# Install gnuplot
 sudo dnf install gnuplot
 
-# install GNU Octave 
+# Install GNU Octave
 sudo dnf -y install scilab
 
-# install R - programming
+# Install R Programming Environment
 sudo dnf -y install rkward
 
-# install R development in jupyter
+# Install R development in Jupyter
 sudo dnf -y install czmq-devel
 
-# updates 
-python -m pip install --update requests
-
+# Update requests package
+pip install --upgrade requests
