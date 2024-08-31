@@ -76,6 +76,7 @@ pip install tensorflow
 pip install xgboost
 
 # Multiple pythons
+sudo dnf install python3.12 # to get CPython 3.12
 sudo dnf install python3.9  # to get CPython 3.9
 sudo dnf install python3.8  # to get CPython 3.8
 sudo dnf install python3.7  # to get CPython 3.7
