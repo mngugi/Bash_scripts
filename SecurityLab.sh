@@ -34,10 +34,10 @@ sudo dnf install sqlninja
 sudo dnf install yersinia
 
 # install hydra 
-sudo dnf install hydra 
+sudo dnf install hydra # A powerful login cracker, which supports numerous protocols.
 
-# install aircrack-ng
-sudo dnf install aircrack-ng
+# install aircrack-ng  
+sudo dnf install aircrack-ng  #A popular wireless network security toolset
 
 # install john        #A fast password cracker
 sudo dnf install john 
