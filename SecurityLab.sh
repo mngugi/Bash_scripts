@@ -68,7 +68,7 @@ sudo dnf tcpdump  # for network packet capturing
 sudo dnf gobuster  # for directory and file brute-forcing
 
 # install openvas
-sudo dnf openvas  # Added for vulnerability scanning
+sudo dnf openvas  # for vulnerability scanning
 
 
 
