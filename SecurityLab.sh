@@ -20,12 +20,16 @@ sudo dnf install medusa
 sudo dnf install nmap
 
 # install scap-workbench
+sudo dnf install scap-workbench
 
 # install skipfish
+sudo dnf install skipfish
 
 # install sqlninja
+sudo dnf install sqlninja
 
 # install yersinia
+sudo dnf install yersinia
 
 
 
