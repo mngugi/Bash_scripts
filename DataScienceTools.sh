@@ -12,6 +12,8 @@ python -m pip install requests
 # Acivate virtual environment
 source project_venv/bin/activate
 
+# incase you need to use the cowsay :)
+python -m pip install --user cowsay
 
 #install pip for python packages installations
 sudo dnf install python3-pip
