@@ -48,7 +48,6 @@ sudo dnf install nikto
 # install metasploit
 sudo dnf install metasploit #A comprehensive penetration testing framework.
 
-
 # install ncrack 
 sudo dnf install ncrack  # for network authentication cracking
 
