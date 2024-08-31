@@ -123,6 +123,8 @@ sudo dnf install git
 # install gnuplot 
 sudo dnf install gnuplot
 
+# Install GNU Octave 
+sudo dnf -y install scilab.
 
 # updates 
 python -m pip install --update requests
