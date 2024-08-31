@@ -120,6 +120,10 @@ jupyter nbextension enable --py widgetsnbextension
 # install git
 sudo dnf install git
 
+# install gnuplot 
+sudo dnf install gnuplot
+
+
 # updates 
 python -m pip install --update requests
 
