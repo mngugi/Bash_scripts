@@ -6,5 +6,6 @@
 sudo dnf update
 
 # Upgrade installed packages
+# Reboots the computer after installations
 sudo dnf upgrade
 sudo reboot 
