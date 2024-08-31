@@ -50,7 +50,7 @@ sudo dnf install metasploit
 
 
 # install ncrack 
-sudo dnf install ncrack  # Added for network authentication cracking
+sudo dnf install ncrack  # for network authentication cracking
 
 # install burpsuite
 sudo dnf install  burpsuite  # Added for advanced web vulnerability scanning
