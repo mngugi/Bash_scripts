@@ -29,7 +29,7 @@ sudo dnf install scap-workbench #A GUI tool that serves as an SCAP scanner and p
 sudo dnf install skipfish # Skipfish is an active web application security reconnaissance tool.
 
 # install sqlninja
-sudo dnf install sqlninja
+sudo dnf install sqlninja # A tool targeted to test SQL Injection vulnerabilities on a web application using Microsoft® SQL Server as its back-end.
 
 # install yersinia
 sudo dnf install yersinia
