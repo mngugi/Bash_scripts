@@ -115,3 +115,7 @@ sudo dnf install micropython
 pip list
 # Enable Jupyter notebook extensions
 jupyter nbextension enable --py widgetsnbextension
+
+# updates 
+python -m pip install --update requests
+
