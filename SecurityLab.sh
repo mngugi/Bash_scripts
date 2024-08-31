@@ -62,7 +62,7 @@ sudo dnf hashcat  # for GPU-based password cracking
 sudo dnf install lynis  #  for system auditing
 
 # install tcpdump
-sudo dnf tcpdump  # Added for network packet capturing
+sudo dnf tcpdump  # for network packet capturing
 
 # install gobuster
 sudo dnf gobuster  # Added for directory and file brute-forcing
