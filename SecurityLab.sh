@@ -55,8 +55,10 @@ sudo dnf install ncrack  # Added for network authentication cracking
 # install burpsuite
 sudo dnf install  burpsuite  # Added for advanced web vulnerability scanning
 
+# install hashcat
+sudo dnf  hashcat  # Added for GPU-based password cracking
 
-  hashcat  # Added for GPU-based password cracking
+
   lynis  # Added for system auditing
   tcpdump  # Added for network packet capturing
   gobuster  # Added for directory and file brute-forcing
