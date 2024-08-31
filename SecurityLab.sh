@@ -32,7 +32,7 @@ sudo dnf install skipfish # Skipfish is an active web application security recon
 sudo dnf install sqlninja # A tool targeted to test SQL Injection vulnerabilities on a web application using Microsoft® SQL Server as its back-end.
 
 # install yersinia
-sudo dnf install yersinia
+sudo dnf install yersinia # Yersinia is a network tool designed to take advantage of some weakness in different network protocols.
 
 # install hydra 
 sudo dnf install hydra # A powerful login cracker, which supports numerous protocols.
