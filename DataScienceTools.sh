@@ -6,6 +6,12 @@
 # Activate virtual environment to have all tools working in one location.
 python3 -m venv project_venv
 
+# run the project requests package 
+python -m pip install requests
+
+# Acivate virtual environment
+source project_venv/bin/activate
+
 
 #install pip for python packages installations
 sudo dnf install python3-pip
