@@ -30,30 +30,24 @@ install_package() {
   fi
 }
 
-# Install packages
+# Install general tools
 install_package etherape "Graphical network monitor"
 install_package ettercap "Suite for man-in-the-middle attacks"
 install_package wireshark "Network traffic analyzer"
 install_package medusa "Massively parallel, modular login brute-forcer"
 install_package nmap "Network discovery and security auditing tool"
 install_package scap-workbench "SCAP scanner with GUI and tailoring capabilities"
-install_package skipfish "Active web application security reconnaissance tool"
 install_package sqlninja "Tool to test SQL Injection vulnerabilities"
 install_package yersinia "Tool to exploit weaknesses in network protocols"
 install_package hydra "Powerful login cracker supporting numerous protocols"
 install_package aircrack-ng "Wireless network security toolset"
 install_package john "Fast password cracker"
 install_package nikto "Web server scanner"
-install_package metasploit "Penetration testing framework"
 install_package ncrack "Network authentication cracker"
-install_package burpsuite "Advanced web vulnerability scanning tool"
-install_package hashcat "GPU-based password cracking tool"
 install_package lynis "Security auditing tool for Unix/Linux systems"
 install_package tcpdump "Network packet analyzer"
-install_package gobuster "Directory, file, and DNS subdomain brute-forcer"
-install_package openvas "Full-featured vulnerability scanner"
 
-# Post-installation configuration
+# Configure Wireshark
 echo "Configuring Wireshark..."
 if usermod -aG wireshark "$SUDO_USER"; then
   echo "Wireshark configured successfully. Please log out and log back in for group changes to take effect."
@@ -62,14 +56,54 @@ else
   echo "Error configuring Wireshark" >> "$LOGFILE"
 fi
 
-# Initialize Metasploit database
+# Install Skipfish from source
+echo "Installing Skipfish..."
+sudo dnf install git gcc make zlib-devel libidn-devel openssl-devel libpcre2-devel -y
+git clone https://github.com/spinkham/skipfish.git
+cd skipfish
+make
+sudo cp skipfish /usr/local/bin/
+cd ..
+
+# Install Metasploit Framework from official installer
+echo "Installing Metasploit Framework..."
+curl https://raw.githubusercontent.com/rapid7/metasploit-framework/master/msfinstall > msfinstall
+chmod 755 msfinstall
+sudo ./msfinstall
+
+# Install Burp Suite (Community Edition)
+echo "Installing Burp Suite..."
+wget https://portswigger.net/burp/releases/download?product=community&version=2023.8&type=jar -O burpsuite_community.jar
+
+# Install OpenVAS via Greenbone Vulnerability Manager (GVM)
+echo "Installing OpenVAS..."
+sudo dnf install dnf-plugins-core -y
+sudo dnf copr enable @greenbone/gvm-latest -y
+install_package greenbone-vulnerability-manager "Full-featured vulnerability scanner"
+sudo gvm-setup
+sudo gvm-start
+
+# Install additional tools
+install_package hashcat "GPU-based password cracking tool"
+install_package gobuster "Directory, file, and DNS subdomain brute-forcer"
+
+# Configure PostgreSQL for Metasploit
+echo "Installing and configuring PostgreSQL for Metasploit..."
+sudo dnf install postgresql-server postgresql-contrib -y
+sudo postgresql-setup --initdb
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+sudo -i -u postgres psql -c "CREATE USER msf WITH PASSWORD 'your_secure_password';"
+sudo -i -u postgres psql -c "CREATE DATABASE msf_database OWNER msf;"
+sudo -i -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE msf_database TO msf;"
+
+# Initialize Metasploit Database
 echo "Initializing Metasploit database..."
 if msfdb init; then
   echo "Metasploit database initialized successfully."
 else
-  echo "Failed to initialize Metasploit database. Check $LOGFILE for details."
+  echo "Error initializing Metasploit database. Check $LOGFILE for details."
   echo "Error initializing Metasploit database" >> "$LOGFILE"
 fi
 
 echo "All installations and configurations are complete. Please check $LOGFILE for any errors."
-
