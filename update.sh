@@ -15,7 +15,7 @@ sudo dnf install rpmconf
 sudo rpmconf -a
 
 # Download Fedora 39 release files
-sudo dnf system-upgrade download --releasever=39
+sudo dnf system-upgrade download --releasever=40
 
 # Install tool for removing retired packages
 sudo dnf install remove-retired-packages
@@ -34,15 +34,14 @@ sudo dnf autoremove
 old_kernels=($(dnf repoquery --installonly --latest-limit=-1 -q))
 if [ "${#old_kernels[@]}" -eq 0 ]; then
     echo "No old kernels found"
-    exit 0
+else
+    if ! sudo dnf remove "${old_kernels[@]}"; then
+        echo "Failed to remove old kernels"
+        exit 1
+    else
+        echo "Removed old kernels"
+    fi
 fi
-
-if ! sudo dnf remove "${old_kernels[@]}"; then
-    echo "Failed to remove old kernels"
-    exit 1
-fi
-
-echo "Removed old kernels"
 
 # Install symlinks and remove dangling ones
 sudo dnf install symlinks
@@ -64,7 +63,5 @@ sudo fixfiles -B onboot
 
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql
 
-
 # Reboot the system for the upgrade to take effect
 sudo dnf system-upgrade reboot
-
