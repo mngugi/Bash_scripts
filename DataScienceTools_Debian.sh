@@ -1,10 +1,13 @@
 #!/bin/bash
 
-# Update package list
-sudo apt update
+# Update and upgrade package list
+sudo apt update && sudo apt upgrade -y
 
 # Install required system packages
 sudo apt install -y python3-pip python3-gi python3-sphinx micropython
+
+# Install virtual environment package (in case it's not already installed)
+sudo apt install -y python3-venv
 
 # Create a virtual environment
 python3 -m venv myenv
