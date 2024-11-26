@@ -9,3 +9,6 @@ free -h
 free -g
 
 echo "Memory Usage."
+
+sar -r 
+echo "Login Time"
