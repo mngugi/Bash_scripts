@@ -16,3 +16,4 @@ echo "Login Time"
 sar -r 
 
 echo "Memory Infor:"
+cat /proc/meminfo  
