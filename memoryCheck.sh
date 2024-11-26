@@ -7,3 +7,5 @@ free -m
 free -h
 
 free -g
+
+echo "Memory Usage."
