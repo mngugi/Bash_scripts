@@ -1,8 +1,6 @@
 #!/usr/bin/bash -xv
 #
 #<Eneter comments or Code Algorithm>
-
-#
 #
 
 # set strict mode . Causes shell to exit when command fails.
