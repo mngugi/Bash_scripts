@@ -14,6 +14,8 @@ python3 -m venv myenv
 
 # Activate the virtual environment
 source myenv/bin/activate
+#Install statsmodel
+python -m pip install statsmodels
 
 # Install Python packages in the virtual environment
 pip install \
