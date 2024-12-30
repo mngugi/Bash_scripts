@@ -1,6 +1,9 @@
 #!/bin/bash
 echo
 # Install Python packages using pip
+#Install statsmodel
+python -m pip install statsmodels
+
 pip install gekko
 pip install beautifulsoup4 lxml
 pip install keras
