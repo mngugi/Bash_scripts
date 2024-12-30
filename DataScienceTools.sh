@@ -14,6 +14,10 @@ pip install requests
 # Install cowsay (optional)
 pip install cowsay
 
+#Install statsmodel
+python -m pip install statsmodels
+
+
 # Install pip for Python package installations (usually pre-installed)
 sudo dnf install python3-pip
 
