@@ -1,5 +1,7 @@
 #!/bin/bash
-
+echo "====================================="
+echo "     Start Http Service"
+echo "====================================="
 # Start a simple HTTP server using Python in the background
 python3 -m http.server 8000 &
 
