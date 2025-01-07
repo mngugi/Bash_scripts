@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # Update package lists and upgrade installed packages
+echo "====================================="
+echo "     Update && Upgrade Debian OS"
+echo "====================================="
 sudo apt update
 sudo apt upgrade -y
 
