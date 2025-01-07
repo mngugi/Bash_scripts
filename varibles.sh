@@ -1,4 +1,7 @@
 #!/bin/bash
+echo "====================================="
+echo "     Variable Sample"
+echo "====================================="
 
 string_variable = "Hi i have finished typing a research proposal"
 
