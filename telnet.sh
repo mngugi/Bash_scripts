@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # Prompt the user for input
+echo "====================================="
+echo "     Telnet Tool"
+echo "====================================="
 echo "Enter connection IP:"
 read IP
 
