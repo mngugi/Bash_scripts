@@ -4,7 +4,7 @@
 
 # Detect the current distribution
 echo "====================================="
-echo "     Remove Old Kernels"
+echo "     Remove Old Kernels Debian"
 echo "====================================="
 if [ -f /etc/debian_version ]; then
     echo "Detected Debian/Ubuntu-based system."

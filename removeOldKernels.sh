@@ -1,4 +1,7 @@
 #!/bin/bash 
+echo "====================================="
+echo "     Remove Old Kernels Fedora"
+echo "====================================="
 
 rpm -q kernel
 sudo dnf remove --oldinstallonly --setopt installonly_limit=2 kernel
