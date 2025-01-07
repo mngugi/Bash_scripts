@@ -4,6 +4,10 @@
 # Fedora daily updates on terminal
 # Update package lists
 
+echo "====================================="
+echo "     Update && Upgrade Fedora OS"
+echo "====================================="
+
 sudo dnf update
 
 # Upgrade installed packages
