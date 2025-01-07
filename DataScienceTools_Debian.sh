@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # Update and upgrade package list
+echo "====================================="
+echo "     Data Science Tool For Debian OS"
+echo "====================================="
 sudo apt update && sudo apt upgrade -y
 
 # Install required system packages
