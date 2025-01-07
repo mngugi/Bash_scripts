@@ -3,6 +3,9 @@
 # Author Peter Mwangi Ngugi
 # this is bash script programm to install a Security
 # lab on Fedora os
+echo "====================================="
+echo "     Install Security Fedora OS Tool"
+echo "====================================="
 
 # install EtherApe
 sudo dnf install etherape #EtherApe is a graphical network monitor for UNIX modeled after etherman. It #displays network activity graphically.
