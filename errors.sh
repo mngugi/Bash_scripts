@@ -1,4 +1,7 @@
 #!/usr/bin/bash
+echo "====================================="
+echo "     Create Errors"
+echo "====================================="
 
 * Create Error
 ls -l /var/kudus
