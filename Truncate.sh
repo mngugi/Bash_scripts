@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-
+echo "====================================="
+echo "     Truncate File"
+echo "====================================="
 echo "Print lines in the text file"
 read LINES
 
