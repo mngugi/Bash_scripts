@@ -1,4 +1,7 @@
 #!/bin/sh
+echo "====================================="
+echo "     Check Path"
+echo "====================================="
 if [ -f /bin/bash ]
 then
 echo “file /bin/bash exists”
