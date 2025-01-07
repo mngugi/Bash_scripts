@@ -15,6 +15,9 @@
 
    # Output:
    # simple interest = p*t*r
+   echo "====================================="
+echo "     Calculate Simple Interest"
+echo "====================================="
 
    echo "Enter the principal:"
    read p
