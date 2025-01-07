@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # Display total memory
+echo "====================================="
+echo "     Check Memory Usage"
+echo "====================================="
 grep MemTotal /proc/meminfo
 
 # Display memory usage in different formats
