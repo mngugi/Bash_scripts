@@ -2,6 +2,9 @@
 echo
 # Install Python packages using pip
 #Install statsmodel
+echo "====================================="
+echo "     Install Python Data Science Tool"
+echo "====================================="
 python -m pip install statsmodels
 
 pip install gekko
