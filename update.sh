@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # Update package lists and upgrade installed packages
+echo "====================================="
+echo "     Update Fedora Tool"
+echo "====================================="
 sudo dnf update
 sudo dnf upgrade
 
