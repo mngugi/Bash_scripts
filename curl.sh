@@ -4,7 +4,7 @@
 echo "====================================="
 echo "     Url Code"
 echo "====================================="
-url="https://github.com"
+url="https://github55.com"
 
 # Make the request using curl
 response=$(curl -s -o /dev/null -w "%{http_code}" "$url")
