@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # Function to clean memory cache
+
+echo "====================================="
+echo "      Clean Memory Cache     "
+echo "====================================="
 clean_memory_cache() {
     echo "Cleaning memory cache..."
     sync; echo 3 > /proc/sys/vm/drop_caches
