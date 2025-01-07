@@ -1,4 +1,7 @@
 #! /bin/bash
+echo "====================================="
+echo "     Check Files with POSIX"
+echo "====================================="
 
 for file in *
  do
