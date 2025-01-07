@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "====================================="
-echo "     Install vis Modules in Python"
+echo "     Install Visualization Modules in Python"
 echo "====================================="
 pip install PyOpenGL
 pip install PyQt4
