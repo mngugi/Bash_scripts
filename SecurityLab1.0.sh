@@ -4,6 +4,9 @@
 # This is a bash script program to install a Security lab on Fedora OS
 
 # Ensure script is run with superuser privileges
+echo "====================================="
+echo "     Install Security Tools Fedora"
+echo "====================================="
 if [ "$EUID" -ne 0 ]; then
   echo "Please run as root or use sudo to execute this script."
   exit 1
