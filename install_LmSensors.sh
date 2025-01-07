@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/bin/bash 
+echo "====================================="
+echo "     Install LM Sensors"
+echo "====================================="
 
 sudo dnf install lm_sensors
 sudo dnf search lm_sensors
