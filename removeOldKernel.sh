@@ -3,6 +3,9 @@
 # Script to remove old kernels on Ubuntu/Debian or Fedora-based systems
 
 # Detect the current distribution
+echo "====================================="
+echo "     Remove Old Kernels"
+echo "====================================="
 if [ -f /etc/debian_version ]; then
     echo "Detected Debian/Ubuntu-based system."
     echo "Removing old kernels except for the currently running one..."
