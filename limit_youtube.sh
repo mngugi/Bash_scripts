@@ -1,4 +1,7 @@
 #!/bin/bash
+echo "====================================="
+echo "     Limit PipeWire Usage"
+echo "====================================="
 
 # Find PID for PipeWire
 pipewire_pid=$(pgrep -x pipewire)
