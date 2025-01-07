@@ -3,6 +3,9 @@
 # Use: This program is used for Fedora OS but can be edited to work for any other operating systems. 
 
 # Activate virtual environment to have all tools working in one location.
+echo "====================================="
+echo "     Data Science Tools Fedora OS"
+echo "====================================="
 python3 -m venv project_venv
 
 # Activate the virtual environment
