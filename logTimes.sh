@@ -1,4 +1,7 @@
 #!/bin/bash
+echo "====================================="
+echo "     Audit Log Activities"
+echo "====================================="
 
 echo -e "\nSystem Load Analysis:"
 
