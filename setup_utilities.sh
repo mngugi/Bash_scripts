@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # Check if running as root
+echo "====================================="
+echo "     Set Utility Tools"
+echo "====================================="
 if [[ $EUID -ne 0 ]]; then
     echo "This script must be run as root. Use 'sudo ./setup_utilities.sh'"
     exit 1
