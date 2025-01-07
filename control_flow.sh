@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "====================================="
+echo "     If Control"
+echo "====================================="
 echo  "what food do you choose?"
 read FOOD
 
