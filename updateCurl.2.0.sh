@@ -14,3 +14,8 @@ echo "Response code: $response"
 
 zenity --progress --title="url loading progress " --text="loading .." --pulsate --auto-close --auto-kill
 
+if [ $? -eq 0 ]; then
+    zenity --info --title="Success" --text="url loading completed successfully!"
+else
+    zenity --error --title="Error" --text="Failed to load url . Please check your internet connection or package manager."
+fi
