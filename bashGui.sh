@@ -11,7 +11,7 @@ echo "# Rebooting system" ; sleep 1
 echo "100" ; sleep 1
 ) |
 zenity --progress \
-  --title="Update System Logs" \
+  --title="Update System Logs today" \
   --text="Scanning mail logs..." \
   --percentage=0
 
