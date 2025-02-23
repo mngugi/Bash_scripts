@@ -1,1 +1,6 @@
-zenity --info --text=$(top -n 1 | grep %cpu | awk '{print $8}') --title="CPU Idle Time "
+
+cpu_idle=$(top -bn1 | grep "Cpu(s)" | awk '{print $8}')
+zenity --info --text=" Cpu Idle time : %cpu_idle%" --title="CPU Idle Time "
+
+
+
