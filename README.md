@@ -1,4 +1,80 @@
 ## Welcome to the Bash-Scripts- wiki!
+
+# 🐚 Bash Scripts Collection
+
+A curated collection of useful and reusable **Bash scripts** for Linux system automation, administration, and productivity. This repository is intended for both beginners and power users looking to streamline common tasks via the command line.
+
+## ⚙️ Features
+
+- ✅ System maintenance (updates, cleanup, logs)
+- 📦 Package management (installers, batch upgrades)
+- 🔐 Security and monitoring tools
+- 📂 File and directory automation
+- 📡 Network utilities
+- ⌛ Cron-ready jobs and scheduled tasks
+- 📁 Modular and readable script structure
+
+## 🚀 Getting Started
+
+### 📦 Requirements
+
+- A Linux system with `bash` installed
+- `sudo` privileges for certain system-level scripts
+
+### ▶️ Usage
+
+Clone the repo:
+
+```bash
+git clone https://github.com/mngugi/Bash_scripts.git
+cd Bash_scripts
+bash scripts/update_system.sh
+chmod +x scripts/update_system.sh
+./scripts/update_system.sh
+
+
+```
+Bash_scripts/
+├── scripts/
+
+│   ├── update_system.sh
+
+│   ├── backup_home.sh
+
+│   ├── net_monitor.sh
+
+│   └── ...
+
+├── utils/
+
+│   └── common.sh
+
+└── README.md
+
+---
+**🧠 Ideal For**
+- Sysadmins and DevOps engineers
+
+- Developers automating their Linux workflow
+
+- Learners exploring Bash scripting best practices
+
+**📚 References**
+- GNU Bash Manual
+
+- TLDP - Advanced Bash Scripting Guide
+
+- ShellCheck (Lint Your Scripts)
+
+- Bash Hackers Wiki
+
+- Linux Command Library
+
+**📜 License**
+- MIT License
+
+***
+
 ### Dockerfile
 ```bash
 FROM python:3.10.1-bullseye
