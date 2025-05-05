@@ -1,3 +1,3 @@
 !#/bin/bash
 
-ifconfig /all
+ifconfig  -a
