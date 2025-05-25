@@ -5,7 +5,7 @@
 
 set -euo pipefail
 
-RELEASE_VERSION=40  # Change this to your target Fedora release version
+RELEASE_VERSION=42  # Change this to your target Fedora release version
 
 echo "====================================="
 echo "         Fedora Upgrade Tool         "
