@@ -1,52 +1,42 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# fedora_upgrade_tool.sh
+# A robust Fedora upgrade script for Fedora 42 using dnf5 and system-upgrade plugin
 
-LOGFILE="/var/log/fedora-up42.log"
-RELEASEVER=42
+set -euo pipefail
+IFS=$'\n\t'
 
-log() {
-  echo -e "[$(date '+%F %T')] $1" | tee -a "$LOGFILE"
-}
+LOGFILE="/var/log/fedora_upgrade_tool.log"
+exec > >(tee -a "$LOGFILE") 2>&1
 
-abort() {
-  log "❌ $1"
+echo "🚀 Starting Fedora Upgrade to 42"
+
+echo "📦 Ensuring system-upgrade plugin is installed..."
+dnf5 install -y dnf-plugins-core || {
+  echo "❌ Failed to install system-upgrade plugin"
   exit 1
 }
 
-log "🚀 Fedora Upgrade to $RELEASEVER Starting"
+echo "🧹 Cleaning cache..."
+dnf5 clean all || {
+  echo "❌ Clean failed"
+  exit 1
+}
 
-# Pre-check
-if ! command -v dnf > /dev/null; then
-  abort "DNF not found. Are you running Fedora?"
-fi
+echo "🔄 Enabling system-upgrade and syncing metadata..."
+dnf5 system-upgrade download --releasever=42 --allowerasing --noclearchannels || {
+  echo "❌ Download step failed"
+  exit 1
+}
 
-if ! rpm -q dnf-plugin-system-upgrade > /dev/null; then
-  log "📦 Installing system-upgrade plugin"
-  sudo dnf install -y dnf-plugin-system-upgrade || abort "Plugin install failed"
-fi
+echo "⬇ Resolving and downloading upgrade packages..."
+# Note: --skip-broken not supported in download, but can be used in upgrade if needed
 
-log "🧹 Cleaning system"
-sudo dnf clean all && sudo dnf autoremove -y
+# If you want to tolerate broken deps at install stage, use upgrade with skip-broken
+# dnf5 system-upgrade download --releasever=42 --allowerasing --skip-broken
 
-log "🔄 Syncing system"
-sudo dnf --releasever=$RELEASEVER --allowerasing distro-sync -y || log "⚠️ Sync failed — continuing"
 
-log "⬇️ Downloading upgrade packages"
-sudo dnf system-upgrade download --releasever=$RELEASEVER --allowerasing --skip-broken --best -y || abort "Download failed"
+echo "✅ Packages downloaded successfully"
 
-# Optional firmware check
-FW_PATH="/lib/firmware/brcm/BCM20702A1-0a5c-21e6.hcd"
-if [ ! -f "$FW_PATH" ]; then
-  log "⚠️ Missing Broadcom Bluetooth firmware: $FW_PATH"
-fi
+echo "🔁 Starting system-upgrade reboot..."
 
-if [ -f /var/lib/dnf/system-upgrade/system-upgrade-transaction.json ]; then
-  log "✅ Download successful. Ready to reboot."
-  read -rp "Reboot now to apply upgrade? [Y/n]: " answer
-  if [[ $answer =~ ^[Yy]$ || -z $answer ]]; then
-    sudo dnf system-upgrade reboot
-  else
-    log "❗ Upgrade staged, reboot later using: sudo dnf system-upgrade reboot"
-  fi
-else
-  abort "Upgrade transaction not found."
-fi
+dnf5 system-upgrade reboot
