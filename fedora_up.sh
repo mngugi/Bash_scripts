@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # fedora_upgrade_tool.sh
-# A robust Fedora upgrade script for Fedora 42 using dnf5 and system-upgrade plugin
+# A robust Fedora upgrade script for Fedora 42 using legacy dnf + system-upgrade plugin
 
 set -euo pipefail
 IFS=$'\n\t'
@@ -11,32 +11,33 @@ exec > >(tee -a "$LOGFILE") 2>&1
 echo "🚀 Starting Fedora Upgrade to 42"
 
 echo "📦 Ensuring system-upgrade plugin is installed..."
-dnf5 install -y dnf-plugins-core || {
+dnf install -y dnf-plugin-system-upgrade || {
   echo "❌ Failed to install system-upgrade plugin"
   exit 1
 }
 
 echo "🧹 Cleaning cache..."
-dnf5 clean all || {
+dnf clean all || {
   echo "❌ Clean failed"
   exit 1
 }
 
-echo "🔄 Enabling system-upgrade and syncing metadata..."
-dnf5 system-upgrade download --releasever=42 --allowerasing --noclearchannels || {
+echo "🔄 Downloading upgrade packages for Fedora 42..."
+dnf system-upgrade download --releasever=42 --allowerasing || {
   echo "❌ Download step failed"
   exit 1
 }
 
-echo "⬇ Resolving and downloading upgrade packages..."
-# Note: --skip-broken not supported in download, but can be used in upgrade if needed
+CURRENT_VER=$(rpm -E %fedora)
+TARGET_VER=42
 
-# If you want to tolerate broken deps at install stage, use upgrade with skip-broken
-# dnf5 system-upgrade download --releasever=42 --allowerasing --skip-broken
+if [[ "$TARGET_VER" -le "$CURRENT_VER" ]]; then
+  echo "⚠️  Current Fedora version is $CURRENT_VER. Cannot upgrade to same or lower version ($TARGET_VER)."
+  exit 1
+fi
 
 
 echo "✅ Packages downloaded successfully"
 
-echo "🔁 Starting system-upgrade reboot..."
-
-dnf5 system-upgrade reboot
+echo "🔁 Rebooting to apply upgrade..."
+dnf system-upgrade reboot
