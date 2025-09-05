@@ -42,6 +42,8 @@ pip install \
   xgboost \
   notebook \
   ipython \
+  jupyter lab \
+  jupyter  notebook
   tox
 
 # List all installed packages and their versions
