@@ -47,7 +47,9 @@ pip install \
   jupyter \
   tox \
   dask \
-  bokeh
+  bokeh \
+  nvidia \ 
+  
 
 # List all installed packages and their versions
 pip list
