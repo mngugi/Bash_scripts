@@ -44,8 +44,8 @@ pip install \
   ipython \
   jupyter lab \
   jupyter  notebook\
-  tox\
-  nvidia
+  tox
+  
 
 # List all installed packages and their versions
 pip list
