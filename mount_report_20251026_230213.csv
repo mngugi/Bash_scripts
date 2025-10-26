@@ -1,0 +1,4 @@
+Device,Label,UUID,FSType,MountPoint,MountTime,Owner,Remarks
+/dev/sdc1,YUMI,4E21-0000,exfat,/media/nova86/YUMI,N/A,nova86,Removable or cross-platform media
+/dev/sdd1,KINGSTON,69A8-4D7B,vfat,/media/nova86/KINGSTON,N/A,nova86,Removable or cross-platform media
+/dev/sde1,YUMI,4E21-0000,exfat,/media/nova86/YUMI1,N/A,nova86,Removable or cross-platform media
