@@ -20,7 +20,6 @@ pip install cowsay
 #Install statsmodel
 python -m pip install statsmodels
 
-
 # Install pip for Python package installations (usually pre-installed)
 sudo dnf install python3-pip
 
@@ -47,8 +46,6 @@ pip install pandas
 
 # Install Pandas Profiling for exploratory data analysis (with notebook support)
 pip install pandas-profiling[notebook]
-
-
 
 # Install Jupyter Lab and notebook
 pip install jupyterlab
