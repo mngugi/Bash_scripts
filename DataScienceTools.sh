@@ -48,6 +48,12 @@ pip install pandas
 # Install Pandas Profiling for exploratory data analysis (with notebook support)
 pip install pandas-profiling[notebook]
 
+
+
+# Install Jupyter Lab and notebook
+pip install jupyterlab
+pip install notebook
+
 # Enable Jupyter Notebook widget extensions
 jupyter nbextension enable --py widgetsnbextension
 
