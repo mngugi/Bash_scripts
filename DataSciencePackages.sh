@@ -23,6 +23,8 @@ pip install seaborn
 pip install statsmodels
 pip install tclab
 pip install xgboost
+pip install jupyterlab
+pip install notebook
 
 # Enable Jupyter notebook extensions
 jupyter nbextension enable --py widgetsnbextension
